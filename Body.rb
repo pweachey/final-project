@@ -1,6 +1,8 @@
 require "gosu"
 
 class Body
+  
+  #Idetifying bodies
 
   def initialize (x, y, velocityx, velocityy, mass, image, universesize)
     @x = x
@@ -15,7 +17,14 @@ class Body
     @G = 6.674e-11
   end
 
+    #attr
+  
+  
   attr_reader :x, :y, :velocityx, :velocityy, :forcex, :forcey, :mass, :image
+  
+  
+  
+    #Physicis
 
   def force_x(px, py, mass)
     force = (@G * mass * @mass) / ((@x - px)**2 + (@y - py)**2)
@@ -43,6 +52,9 @@ class Body
     @forcex = 0
     @forcey = 0
   end
+  
+  
+  #drawing the universise
 
   def draw
     @image.draw((@x/@universesize)*320 + (640/2) - @image.width/2, (@y/@universesize)*320 + (640/2) - @image.height/2, 1)
