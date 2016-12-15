@@ -2,6 +2,9 @@ require "gosu"
 
 class Body
 
+
+  #Initialzing content
+  
   def initialize (x, y, velocityx, velocityy, mass, image, universesize)
     @x = x
     @y = y
@@ -15,7 +18,13 @@ class Body
     @G = 6.674e-11
   end
 
+  
+  
+    #attr file Planet 
+  
   attr_reader :x, :y, :velocityx, :velocityy, :forcex, :forcey, :mass, :image
+  
+  #Physics
 
   def force_x(px, py, mass)
     force = (@G * mass * @mass) / ((@x - px)**2 + (@y - py)**2)
@@ -43,6 +52,8 @@ class Body
     @forcex = 0
     @forcey = 0
   end
+  
+  #Drawing the universie In Planet.rb
 
   def draw
     @image.draw((@x/@universesize)*320 + (640/2) - @image.width/2, (@y/@universesize)*320 + (640/2) - @image.height/2, 1)
