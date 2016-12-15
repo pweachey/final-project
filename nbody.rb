@@ -4,6 +4,10 @@ require "./body"
 
 class NbodySimulation < Gosu::Window
 
+  
+  #Nbody Intializing Phics #Bro
+  
+  
   def initialize
     super(640, 640, false)
     self.caption = "NBody simulation"
@@ -43,6 +47,10 @@ class NbodySimulation < Gosu::Window
     end
   end
 
+  
+  #Drawing Images and commits phisics
+  
+  
   def draw
     @background_image.draw(0, 0, ZOrder::Background)
     @bodies.each do |body|
